@@ -1,5 +1,4 @@
-import Image from "next/image";
-import graph from "@/public/TradingView.jpg";
+import StockInfo from "@/components/stockinfo";
 
 export default function Home() {
   return (
@@ -17,27 +16,7 @@ export default function Home() {
           to take a quick check on your stock <br /> holdings
         </p>
       </div>
-      <div className="mb-5">
-        <select className="select select-primary w-50 md:w-96 max-w-xs">
-          <option
-            disabled
-            selected
-          >
-            Select a stock
-          </option>
-          <option>Svelte</option>
-          <option>Vue</option>
-          <option>React</option>
-        </select>
-      </div>
-      <div className="w-fit border-2 border-gray-600 rounded-md p-2">
-        <Image
-          src={graph}
-          alt="graph image"
-          width={500}
-          className="rounded-md"
-        />
-      </div>
+      <StockInfo />
     </div>
   );
 }
