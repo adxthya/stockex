@@ -12,8 +12,8 @@ export default function Home() {
       </div>
       <div>
         <p className="text-lg mb-5 text-center">
-          <span className="font-semibold">Stock trade </span>is a minimal place
-          to take a quick check on your stock <br /> holdings
+          <span className="font-semibold">Stockex </span>is a minimal place to
+          take a quick check on your stock <br /> holdings
         </p>
       </div>
       <StockInfo />

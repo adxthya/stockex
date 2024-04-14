@@ -7,7 +7,7 @@ export default function Navbar() {
           color="blue"
           size={20}
         />{" "}
-        StockTrade
+        Stockex
       </p>
     </div>
   );

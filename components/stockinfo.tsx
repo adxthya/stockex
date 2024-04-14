@@ -9,6 +9,10 @@ export default function StockInfo() {
   const [title, setTitle] = useState<string | null>("");
   const [stockPrice, setStockPrice] = useState<string | null | undefined>("");
   const [variance, setVariance] = useState<string | null | undefined>("");
+  const [yearReturns, setYearReturns] = useState<string | null | undefined>("");
+  const [monthReturns, setMonthReturns] = useState<string | null | undefined>(
+    ""
+  );
   const [isInitialRender, setInitialRender] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   async function getPrice(e: ChangeEvent<HTMLSelectElement>) {
@@ -20,6 +24,8 @@ export default function StockInfo() {
     const data = await fetchData(stock);
     setStockPrice(data.price);
     setVariance(data.variance);
+    setMonthReturns(data.monthReturns);
+    setYearReturns(data.yearReturns);
     setTitle(title);
     setIsLoading(false);
   }
@@ -55,7 +61,7 @@ export default function StockInfo() {
         </div>
       )}
       {!isInitialRender && (
-        <div className="w-72 border-2 h-40 flex items-center justify-center border-violet-500 rounded-md">
+        <div className="w-fit min-w-80 border-2 h-fit min-h-80 flex items-center justify-center border-violet-500 rounded-md">
           {isLoading ? (
             <span className="loading loading-spinner text-primary w-10"></span>
           ) : (
@@ -63,6 +69,8 @@ export default function StockInfo() {
               title={title}
               price={stockPrice}
               variance={variance}
+              monthReturns={monthReturns}
+              yearReturns={yearReturns}
             />
           )}
         </div>
