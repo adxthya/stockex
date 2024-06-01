@@ -9,7 +9,7 @@
 
 ## Technologies Used
 - Next.js
-- Cheerio
+- Puppeteer
 - Tailwindcss
 
 ## Setup Instructions
