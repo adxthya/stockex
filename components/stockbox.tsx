@@ -14,7 +14,7 @@ export default function StockBox({
   yearReturns,
 }: StockBoxProps) {
   return (
-    <div className="w-full flex flex-col items-center p-5 gap-1">
+    <div className="w-full flex flex-col items-center gap-1">
       <p className="text-3xl font-semibold">{title}</p>
       <div className="flex justify-center space-x-2 text-lg">
         <p>Current Price:</p>

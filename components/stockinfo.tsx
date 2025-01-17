@@ -1,9 +1,8 @@
 "use client";
-import Image from "next/image";
-import graph from "@/public/TradingView.jpg";
 import { ChangeEvent, useState } from "react";
 import StockBox from "./stockbox";
 import fetchData from "@/app/api/fetchdata";
+import { Loader as LucideLoader } from "lucide-react";
 
 export default function StockInfo() {
   const [title, setTitle] = useState<string | null>("");
@@ -44,26 +43,23 @@ export default function StockInfo() {
           >
             Select a stock
           </option>
-          <option value="TATAMOTORS">Tata motors</option>
-          <option value="TATASTEEL">Tata steel</option>
+          <option value="TATAMOTORS">Tata Motors</option>
+          <option value="TATASTEEL">Tata Steel</option>
           <option value="ASHOKLEY">Ashok Leyland</option>
           <option value="DBREALTY">Dbrealty</option>
         </select>
       </div>
-      {isInitialRender && (
-        <div className="w-fit border-2 border-gray-600 rounded-md p-2">
-          <Image
-            src={graph}
-            alt="graph image"
-            width={500}
-            className="rounded-md"
-          />
-        </div>
-      )}
       {!isInitialRender && (
-        <div className="w-fit min-w-80 border-2 h-fit min-h-80 flex items-center justify-center border-violet-500 rounded-md">
+        <div className="w-fit min-w-80 h-fit min-h-60 flex items-center justify-center rounded-md">
           {isLoading ? (
-            <span className="loading loading-spinner text-primary w-10"></span>
+            <div className={`flex items-center justify-center`}>
+              <LucideLoader
+                size={24}
+                color="white"
+                className="animate-spin"
+                aria-label="Loading"
+              />
+            </div>
           ) : (
             <StockBox
               title={title}
